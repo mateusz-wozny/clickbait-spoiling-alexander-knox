@@ -48,7 +48,7 @@ def generate_spoilers(
     spoilers = []
     tokenizer, model, device = load_model()
     prompt = get_prompt(examples_per_class=examples_per_class)
-    if number_of_generated_spoilers:
+    if number_of_generated_spoilers is None:
         number_of_generated_spoilers = df.shape[0]
 
     for i in tqdm(range(number_of_generated_spoilers)):
