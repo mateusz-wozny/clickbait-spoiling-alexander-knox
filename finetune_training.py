@@ -1,6 +1,6 @@
 from datasets import Dataset
 from transformers import AutoTokenizer
-from evaluate import load_metric
+from evaluate import load
 from transformers import AutoModelForSequenceClassification, TrainingArguments, Trainer
 import numpy as np
 
@@ -25,7 +25,7 @@ def prepare_model_and_data(
     return model, tokenizer, train_dataset, val_dataset
 
 
-metric = load_metric("accuracy")
+metric = load("accuracy")
 
 
 def compute_metrics(eval_pred):
